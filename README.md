@@ -120,4 +120,12 @@ Despite of `MaxConnectionsPerNode` set to 20 CqlSharp only opened 2 connections 
 
 
 
+Cql schema
 
+CREATE TABLE relations (
+  app_id text,
+  item_id text,
+  relation text,
+  values text,
+  PRIMARY KEY ((app_id, item_id, relation))
+)
