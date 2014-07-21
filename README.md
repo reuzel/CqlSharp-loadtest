@@ -113,3 +113,11 @@ This runs normally without any problems. But if you lift threads count (for exam
 Heavy locks on command send, increasing wait times for reads. 
 Despite of `MaxConnectionsPerNode` set to 20 CqlSharp only opened 2 connections to each node. Both being heavily locked with writes.
 
+#### Bottom line:
+1. Direct provider calls works fine, giving ~2.5k req/sec rate at 20 threads
+2. IIS hosted Owin app works fine, giving ~900 req/sec on same machine (with client and host runnin same machine)
+3. Self hosted Owin app works fine on low (~5-10) thread count but instantly locks on 15-20 threads 8(
+
+
+
+
