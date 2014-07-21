@@ -19,7 +19,7 @@ namespace OwinHost
 			app.UseHandlerAsync((req, res) =>
 				{
 					Log.Trace("new request arrived");					
-					var path = req.Path.Remove(0, 9);
+					var path = req.Path.Remove(0,9);
 					var itemId = path.Substring(0, path.IndexOf('/'));
 					var relation = path.Substring(path.IndexOf('/')+1);
 					//var data = CallTimed(() => provider.Get("ozon", itemId, relation).Result);

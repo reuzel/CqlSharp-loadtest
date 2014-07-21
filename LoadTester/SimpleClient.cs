@@ -17,7 +17,7 @@ namespace LoadTester
 		/// API path template
 		/// </summary>
 		/// <exclude />
-		public const string PATH_TEMPLATE = "negr/{0}/{1}";
+		public const string PATH_TEMPLATE = "v2/negr/{0}/{1}";
 
 		/// <summary>
 		/// <see cref="System.Net.Http.Formatting.MediaTypeFormatter"/> для упаковки данных запроса к сервису и распаковки ответа
@@ -46,7 +46,7 @@ namespace LoadTester
 		/// <returns>Ответ сервиса, десериализованный в тип <paramref name="T"/>. Либо null, если десериализовать не удалось или сервис не вернул ничего.</returns>
 		protected async Task<T> GetAsync<T>(string url)
 		{
-			return await SendAsync<T>(url, HttpMethod.Get, Formatter, null);
+			return await SendAsync<T>(url, HttpMethod.Get, Formatter, null).ConfigureAwait(false);
 		}
 
 

@@ -34,7 +34,7 @@ namespace OwinHost
 				await conn.OpenAsync().ConfigureAwait(false);
 				var query = string.Format(
 					System.Globalization.CultureInfo.InvariantCulture,
-					"select values from relations where app_id = '{0}' and item_id='{1}' and relation='{2}';",
+					"select values from negrapi.relations where app_id = '{0}' and item_id='{1}' and relation='{2}';",
 					appId,
 					GetKey(itemId, userId),
 					relation);

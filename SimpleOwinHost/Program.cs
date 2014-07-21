@@ -7,13 +7,16 @@ namespace SimpleOwinHost
 	{
 		static void Main(string[] args)
 		{
-		 string uri = "http://localhost";
- 
+			string uri = "http://localhost";
+
+			if (args.Length > 0)
+				uri = args[0];
+
 			using (WebApp.Start<OwinHost.Startup>(uri))
 			{
-					Console.WriteLine("Started");
-					Console.ReadKey();
-					Console.WriteLine("Stopping");
+				Console.WriteLine("Started");
+				Console.ReadKey();
+				Console.WriteLine("Stopping");
 			}
 		}
 	}
